@@ -10,6 +10,13 @@ class Settings(BaseSettings):
     database_user: str = "qdrant_forms"
     database_password: str = ""
 
+    # Memory DB (editor de temas/subtemas/bloques)
+    memory_db_host: str = "localhost"
+    memory_db_port: int = 3306
+    memory_db_name: str = "memory"
+    memory_db_user: str = "root"
+    memory_db_password: str = ""
+
     # Qdrant
     qdrant_url: str = "http://localhost:6333"
     qdrant_api_key: str = ""
