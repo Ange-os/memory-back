@@ -99,3 +99,30 @@ class PuntoUpdate(BaseModel):
     tipo: Optional[str] = None
     subcategoria: Optional[str] = None
     metadata: Optional[dict] = None
+
+
+class BusquedaPayloadRequest(BaseModel):
+    q: str = ""
+    field: Optional[str] = None
+    limit: int = 100
+
+
+class PuntoPayloadNormalizado(BaseModel):
+    point_id: str
+    block_id: Optional[int] = None
+    title: str = ""
+    topic: str = ""
+    subtopic: str = ""
+    tipo: str = ""
+    content: str = ""
+    payload: dict
+
+
+class BusquedaPayloadResponse(BaseModel):
+    resultados: List[PuntoPayloadNormalizado]
+    total: int
+
+
+class BloqueQdrantUpdate(BaseModel):
+    content: Optional[str] = None
+    metadata: Optional[dict] = None
